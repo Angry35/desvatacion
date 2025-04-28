@@ -1,0 +1,41 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgba(0, 0, 0, 0.5); /* Un color con transparencia */
+    background: url('back.png') no-repeat center center fixed;
+    background-size: 100% 100%;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+span {
+    display: block;
+    font-family: monospace;
+    white-space: nowrap;
+    border-right: 4px solid;
+    overflow: hidden; /* Asegura que no se muestre el texto antes de tiempo */
+    width: 60ch;
+    animation: typing 2s steps(20), blink .5s infinite step-end alternate;
+    font-size: 1rem;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
