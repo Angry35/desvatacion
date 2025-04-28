@@ -10,11 +10,17 @@ body {
     background-size: 100% 100%;
 }
 
-
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.logo {
+    position: fixed; /* Posiciona el logo de manera fija en la parte superior */
+    top: 10px; /* Ajusta el espacio desde la parte superior */
+    left: 10px; /* Ajusta el espacio desde la izquierda */
+    width: 250px; /* Ajusta el tamaño del logo */
+    z-index: 10; /* Asegura que el logo esté encima del contenido */
 }
 
 span {
@@ -23,8 +29,8 @@ span {
     white-space: nowrap;
     border-right: 4px solid;
     overflow: hidden; /* Asegura que no se muestre el texto antes de tiempo */
-    width: 60ch;
-    animation: typing 2s steps(20), blink .5s infinite step-end alternate;
+    width: 10ch;
+    animation: typing 2s steps(10), blink .5s infinite step-end alternate;
     font-size: 1rem;
 }
 
