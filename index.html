@@ -1,17 +1,192 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Devastacion</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Devastación</title>
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="/src/styles/style.css" />
 </head>
 <body>
-    <!-- Logo en la parte superior -->
-    <img src="logofeo1.png" alt="Logo" class="logo">
-    
+  <!-- Logo fijo en la esquina superior izquierda -->
+  <img src="src/images/logofeo1.png" alt="Logo Devastación" class="logo" />
+
+  <!-- Sección 1: primer parallax con texto animado -->
+  <section class="parallax parallax-1">
+
     <div class="container">
-        <span>Hola jefe</span>
+        
+      <span>La mejor experiencia de zombies hasta ahora</span>
     </div>
+  </section>
+
+  <!-- Sección 2: segundo parallax, sólo fondo -->
+  <section class="parallax parallax-2">
+    <!-- si deseas, aquí puedes meter contenido -->
+  </section>
+
+  <!-- Sección 3: tercer parallax -->
+  <section class="parallax parallax-3">
+    <!-- contenido opcional -->
+    <div class="parent">
+
+        <div class="div1"> 
+           <!--cards 1--> 
+          <div class ="wrapper">
+            <div class="container">
+    
+                <!-- card 1 -->
+                <input type="radio" name="slider"  id="c1" >
+                <label for="c1" class="card">
+                    <div class="row">
+                        <div class="icon"></div>
+                        <div class="description">
+                            <h4>chongo</h4>
+                            <p>Todo lo que pase aqui, aqui se queda
+                            </p>
+    
+                        </div>
+                    </div>
+                </label>
+    
+                <!-- card 2 -->
+    
+                <input type="radio" name="slider"  id="c2">
+                <label for="c2" class="card">
+                    <div class="row">
+                        <div class="icon"></div>
+                        <div class="description">
+                            <h4>switch</h4>
+                            <p>La mejor puta consola de la historia
+                            </p>
+    
+                        </div>
+                    </div>
+                </label>
+    
+                <!-- card 3 -->
+    
+                <input type="radio" name="slider"  id="c3">
+                <label for="c3" class="card">
+                    <div class="row">
+                        <div class="icon"></div>
+                        <div class="description">
+                            <h4>zombies</h4>
+                            <p>Joder,  como amo los zombies
+                            </p>
+    
+                        </div>
+                    </div>
+                </label>
+    
+                <!-- card 4 -->
+    
+                <input type="radio" name="slider"  id="c4">
+                <label for="c4" class="card">
+                    <div class="row">
+                        <div class="icon"></div>
+                        <div class="description">
+                            <h4>Monster truck</h4>
+                            <p>prum prum
+                            </p>
+    
+                        </div>
+                    </div>
+                </label>
+    
+            </div>
+          </div>
+          <!--end card-->
+        </div>
+
+
+        <div class="div2"> 
+
+          <!-- cards 2-->
+          <div class ="wrapper">
+            <div class="container">
+    
+                <!-- card 1 -->
+                <input type="radio" name="slider"  id="c5" >
+                <label for="c5" class="card">
+                    <div class="row">
+                        <div class="icon"></div>
+                        <div class="description">
+                            <h4>chongo</h4>
+                            <p>Todo lo que pase aqui, aqui se queda
+                            </p>
+    
+                        </div>
+                    </div>
+                </label>
+    
+                <!-- card 2 -->
+    
+                <input type="radio" name="slider"  id="c6">
+                <label for="c6" class="card">
+                    <div class="row">
+                        <div class="icon"></div>
+                        <div class="description">
+                            <h4>switch</h4>
+                            <p>La mejor puta consola de la historia
+                            </p>
+    
+                        </div>
+                    </div>
+                </label>
+    
+                <!-- card 3 -->
+    
+                <input type="radio" name="slider"  id="c7">
+                <label for="c7" class="card">
+                    <div class="row">
+                        <div class="icon"></div>
+                        <div class="description">
+                            <h4>zombies</h4>
+                            <p>Joder,  como amo los zombies
+                            </p>
+    
+                        </div>
+                    </div>
+                </label>
+    
+                <!-- card 4 -->
+    
+                <input type="radio" name="slider"  id="c8">
+                <label for="c8" class="card">
+                    <div class="row">
+                        <div class="icon"></div>
+                        <div class="description">
+                            <h4>Monster truck</h4>
+                            <p>prum prum
+                            </p>
+    
+                        </div>
+                    </div>
+                </label>
+    
+            </div>
+          </div>
+          <!--end card-->
+        </div>
+
+        
+        <div class="div3">mundos </div>
+        <div class="div4">yuju</div>
+        </div> 
+  </section>
+
+  <!-- Sección 4: cuarto parallax -->
+  <section class="parallax parallax-4">
+    <!-- contenido opcional -->
+  </section>
+
+  <!-- Botón radial de Discord fijo en la esquina inferior derecha -->
+  <a href="https://discord.gg/KjWknXTa" target="_blank" class="discord-button">
+    <img src="src/images/discord.png" alt="Discord" class="discord-logo" />
+  </a>
+
+  <!-- JS externo para el fade-out del logo y el botón al hacer scroll -->
+  <script src="js/scroll-fade.js"></script>
 </body>
 </html>

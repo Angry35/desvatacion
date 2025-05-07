@@ -1,0 +1,230 @@
+/* --- Reset mínimo --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --- Fuente personalizada --- */
+@font-face {
+  font-family: 'MiFuente';
+  src: url('/src/fonts/CaviarDreams_Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* --- Body genérico --- */
+body {
+  margin: 0;
+  font-family: 'MiFuente', Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* --- Logo fijo superior con transición de opacidad --- */
+.logo {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  width: 250px;
+  z-index: 10;
+  transition: opacity 0.5s ease;
+}
+
+/* --- Parallax base para todas las secciones --- */
+.parallax {
+    width: 100vw;        /* todo el ancho de la ventana */
+    height: 100vh;       /* toda la altura de la ventana */
+    overflow: hidden;    /* nada puede salirse */
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- Fondos de las 4 secciones (sustituye las rutas) --- */
+.parallax-1 { 
+  background-size: 100% 100%;
+  background-image: url('/src/images/back.png'
+  ); }
+.parallax-2 { background-image: url('/src/images/para2.png'); }
+.parallax-3 { 
+  width: 100vw;
+  height: 100vh;       /* antes 100vh, ahora un 50% más alto */
+  overflow: hidden;
+  background: linear-gradient(
+  180deg,
+  #1E3633 29%,
+  #1A180D 51%,
+  #030707 93% 
+);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.parallax-4 { background-image: url('/src/images/back.png'); }
+
+/* --- Texto animado en sección 1 --- */
+.container {
+  text-align: center;
+}
+.container span {
+  display: inline-block;
+  font-family: monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 4px solid;
+  width: 31ch;
+  font-size: 3rem;
+  animation:
+    typing 2s steps(31) forwards,
+    blink 0.5s infinite step-end alternate;
+}
+@keyframes typing {
+  from { width: 0; }
+  to   { width: 31ch; }
+}
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* --- Botón radial de Discord fijo con transición --- */
+.discord-button {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 100px;
+  height: 100px;
+  background: rgba(0,0,0,0.7);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  cursor: pointer;
+  transition: background 0.3s ease, opacity 0.5s ease;
+  z-index: 10;
+}
+.discord-button:hover {
+  background: rgba(0,0,0,0.9);
+}
+.discord-logo {
+  width: 120%;
+  height: 120%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* --- Grid principal en sección 3 --- */
+/* Contenedor principal en sección 3: 2×2 */
+.parallax-3 .parent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows:    1fr 1fr;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* oculta cualquier contenido que sobresalga */
+}
+
+/* Asignamos cada div a un cuadrante */
+.parallax-3 .div1 { grid-area: 1 / 1 / 2 / 2; } /* superior-izquierda */
+.parallax-3 .div3 { grid-area: 1 / 2 / 2 / 3; } /* superior-derecha */
+.parallax-3 .div4 { grid-area: 2 / 1 / 3 / 2; } /* inferior-izquierda */
+.parallax-3 .div2 { grid-area: 2 / 2 / 3 / 3; } /* inferior-derecha */
+
+/* Cada sector también oculta el overflow interno */
+.parallax-3 .div1,
+.parallax-3 .div2,
+.parallax-3 .div3,
+.parallax-3 .div4 {
+  position: relative;
+  overflow: hidden;
+}
+
+/* El slider sólo en el sector .div1 .div2*/
+.parallax-3 .div2 .wrapper,
+.parallax-3 .div1 .wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.parallax-3 .div2 .container,
+.parallax-3 .div1 .container {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: visible;  /* scroll si las cards no caben */
+  padding: 20px;
+}
+
+/* Cards dentro de div1 div2*/
+.parallax-3 .div2 .card,
+.parallax-3 .div1 .card {
+  width: 300px;
+  height: 800px;
+  margin: 0px 40px;
+  background-size: cover;
+  border-radius: 9rem;
+  overflow: visible; /* para que no las corte al expandirse */
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+  transition: width 0.6s cubic-bezier(.28,-0.03,0,.99);
+  box-shadow: 0 10px 30px -5px rgba(0,0,0,0.8);
+}
+
+.parallax-3 .div2 .card .row,
+.parallax-3 .div1 .card .row {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+.parallax-3 .div2 .card .description,
+.parallax-3 .div1 .card .description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 50px;
+  height: 200px;
+  width: 1000px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease 0.3s, transform 0.3s ease 0.3s;
+}
+
+/* Inputs ocultos */
+.parallax-3 .div2 input[type="radio"],
+.parallax-3 .div1 input[type="radio"] {
+  display: none;
+}
+
+/* Expansión */
+.parallax-3 .div2 input:checked + label.card,
+.parallax-3 .div1 input:checked + label.card {
+  width: 1000px;
+}
+.parallax-3 .div1 input:checked + label.card .description,
+.parallax-3 .div1 input:checked + label.card .description {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Fondos específicos para cada card --- */
+.parallax-3 label[for="c1"].card  { background-image: url('/src/images/chongo.jpg'); }
+.parallax-3 label[for="c2"].card  { background-image: url('/src/images/switch.jpg'); }
+.parallax-3 label[for="c3"].card  { background-image: url('/src/images/zom.jpg'); }
+.parallax-3 label[for="c4"].card  { background-image: url('/src/images/monster.jpg'); }
+.parallax-3 label[for="c5"].card  { background-image: url('/src/images/chongo.jpg'); }
+.parallax-3 label[for="c6"].card  { background-image: url('/src/images/switch.jpg'); }
+.parallax-3 label[for="c7"].card  { background-image: url('/src/images/zom.jpg'); }
+.parallax-3 label[for="c8"].card  { background-image: url('/src/images/monster.jpg'); }
+
+
+
+
+/**/
